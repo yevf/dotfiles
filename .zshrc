@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME=""
+ZSH_THEME="dracula"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -59,17 +59,18 @@ ZSH_THEME=""
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load?
+##### PLUGINS #####
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
 	gh
+	tmux
+    z
 	zsh-autosuggestions
 	zsh-syntax-highlighting
-	tmux
+	zsh-vi-mode
 	)
 
 source $ZSH/oh-my-zsh.sh
@@ -78,8 +79,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Initialize pure promp 
 # https://github.com/sindresorhus/pure
-autoload -U promptinit; promptinit
-prompt pure
+# autoload -U promptinit; promptinit
+# prompt pure
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -104,3 +105,5 @@ prompt pure
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -82,6 +82,12 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
 " Plugin code goes here.
 
+" Dracula theme plugin config.
+" packadd! dracula
+" syntax enable
+" colorscheme dracula
+
+
 " }}}
 
 
