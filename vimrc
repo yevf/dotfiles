@@ -14,12 +14,15 @@ filetype indent on
 " Turn on syntax highlighting.
 syntax on
 
+" Set background color to dark
+set background=dark
+
 " Show line numbers.
 set number
 set relativenumber
 
 " Highlight cursor line underneath the cursor horizontally.
-set cursorline
+" set cursorline
 
 " Highlight cursor line underneath the cursor vertically.
 " set cursorcolumn
@@ -83,6 +86,11 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 " Plugin code goes here.
 
 " Dracula theme plugin config.
+" Additional configs to make colors look right 
+" **** https://github.com/dracula/vim/issues/96
+let g:dracula_colorterm = 0
+let g:dracula_italic = 0
+
  packadd! dracula
 syntax enable
 colorscheme dracula
@@ -184,11 +192,11 @@ augroup END
 
 "You can split a window into sections by typing `:split` or `:vsplit`.
 " Display cursorline and cursorcolumn ONLY in active window.
-augroup cursor_off
-    autocmd!
-    autocmd WinLeave * set nocursorline " Removing column highlight nocursorcolumn
-    autocmd WinEnter * set cursorline " Removing column highlight ncursorcolumn
-augroup END
+" augroup cursor_off
+"     autocmd!
+"     autocmd WinLeave * set nocursorline " Removing column highlight nocursorcolumn
+"     autocmd WinEnter * set cursorline " Removing column highlight ncursorcolumn
+" augroup END
 
 " }}}
 
