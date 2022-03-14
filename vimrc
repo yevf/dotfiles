@@ -22,7 +22,7 @@ set relativenumber
 set cursorline
 
 " Highlight cursor line underneath the cursor vertically.
-set cursorcolumn
+" set cursorcolumn
 
 " Set shift width to 4 spaces.
 set shiftwidth=4
@@ -56,7 +56,7 @@ set smartcase
 set showcmd
 
 " Show the mode you are on the last line.
-set showmode
+" set showmode
 
 " Show matching words during a search.
 set showmatch
@@ -186,8 +186,8 @@ augroup END
 " Display cursorline and cursorcolumn ONLY in active window.
 augroup cursor_off
     autocmd!
-    autocmd WinLeave * set nocursorline nocursorcolumn
-    autocmd WinEnter * set cursorline cursorcolumn
+    autocmd WinLeave * set nocursorline " Removing column highlight nocursorcolumn
+    autocmd WinEnter * set cursorline " Removing column highlight ncursorcolumn
 augroup END
 
 " }}}
