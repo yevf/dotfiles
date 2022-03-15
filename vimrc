@@ -15,14 +15,14 @@ filetype indent on
 syntax on
 
 " Set background color to dark
-set background=dark
+" set background=dark
 
 " Show line numbers.
 set number
 set relativenumber
 
 " Highlight cursor line underneath the cursor horizontally.
-" set cursorline
+set cursorline
 
 " Highlight cursor line underneath the cursor vertically.
 " set cursorcolumn
@@ -40,7 +40,7 @@ set expandtab
 set nobackup
 
 " Do not let cursor scroll below or above N number of lines when scrolling.
-set scrolloff=10
+set scrolloff=5
 
 " Do not wrap lines. Allow long lines to extend as far as the line goes.
 set nowrap
@@ -74,7 +74,7 @@ set history=1000
 set wildmenu
 
 " Make wildmenu behave like similar to Bash completion.
-set wildmode=list:longest
+set wildmode=full
 
 " There are certain files that we would never want to edit with Vim.
 " Wildmenu will ignore files with these extensions.
@@ -85,15 +85,10 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
 " Plugin code goes here.
 
-" Dracula theme plugin config.
-" Additional configs to make colors look right 
-" **** https://github.com/dracula/vim/issues/96
-let g:dracula_colorterm = 0
-let g:dracula_italic = 0
-
- packadd! dracula
-syntax enable
-colorscheme dracula
+" ==== SRCERY THEME CONFIG ====
+"   follow config directions for dracula vim, but name srcery
+"   https://github.com/srcery-colors/srcery-vim
+colorscheme srcery
 
 " }}}
 
@@ -192,10 +187,10 @@ augroup END
 
 "You can split a window into sections by typing `:split` or `:vsplit`.
 " Display cursorline and cursorcolumn ONLY in active window.
-" augroup cursor_off
-"     autocmd!
-"     autocmd WinLeave * set nocursorline " Removing column highlight nocursorcolumn
-"     autocmd WinEnter * set cursorline " Removing column highlight ncursorcolumn
+augroup cursor_off
+     autocmd!
+     autocmd WinLeave * set nocursorline " Removing column highlight nocursorcolumn
+     autocmd WinEnter * set cursorline " Removing column highlight ncursorcolumn
 " augroup END
 
 " }}}
@@ -203,11 +198,20 @@ augroup END
 
 " STATUS LINE ------------------------------------------------------------ {{{
 
-" install vim airline for status bar
-" **** https://github.com/vim-airline/vim-airline
+" Clear status line when vimrc is reloaded.
+set statusline=
 
-" Status bar code goes here.
+" Status line left side.
+set statusline+=\ %F\ %M\ %Y\ %R
 
+" Use a divider to separate the left side from the right side.
+set statusline+=%=
+
+" Status line right side.
+set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
+
+" Show the status on the second to last line.
+set laststatus=2
 
 " }}}
 
