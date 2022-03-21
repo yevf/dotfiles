@@ -1,9 +1,16 @@
 
+" a config layout to checkout 
+"    https://github.com/amix/vimrc
+"
+
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 
 " Enable type file detection. Vim will be able to try to detect the type of file in use.
 filetype on
+
+" Enable utf-8
+set encoding=utf-8
 
 " Enable plugins and load plugin for the detected file type.
 filetype plugin on
@@ -20,6 +27,9 @@ syntax on
 " Show line numbers.
 set number
 set relativenumber
+
+" Add a bit extra margin to the left
+set foldcolumn=2
 
 " Highlight cursor line underneath the cursor horizontally.
 set cursorline
@@ -73,9 +83,6 @@ set history=1000
 " Enable auto completion menu after pressing TAB.
 set wildmenu
 
-" Make wildmenu behave like similar to Bash completion.
-set wildmode=full
-
 " There are certain files that we would never want to edit with Vim.
 " Wildmenu will ignore files with these extensions.
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
@@ -89,6 +96,10 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 "   follow config directions for dracula vim, but name srcery
 "   https://github.com/srcery-colors/srcery-vim
 colorscheme srcery
+
+" ==== VIM-EASYCOMPLETE PLUGIN ===
+" install pack from https://github.com/jayli/vim-easycomplete
+
 
 " }}}
 
@@ -198,20 +209,40 @@ augroup cursor_off
 
 " STATUS LINE ------------------------------------------------------------ {{{
 
-" Clear status line when vimrc is reloaded.
-set statusline=
-
-" Status line left side.
-set statusline+=\ %F\ %M\ %Y\ %R
-
-" Use a divider to separate the left side from the right side.
-set statusline+=%=
-
-" Status line right side.
-set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
+" === LIGHTLINE CONFIG ===
+" https://github.com/itchyny/lightline.vim
 
 " Show the status on the second to last line.
 set laststatus=2
+
+" remove mode duplicate display
+set noshowmode
+
+" colorscheme config
+" more colorschemes for lightline listed at below page
+"   https://github.com/itchyny/lightline.vim/blob/master/colorscheme.md#available-colorschemes
+let g:lightline = {
+      \ 'colorscheme': 'srcery_drk',
+      \ }
+
+" MANUAL CONFIG SETTINGS
+" " Clear status line when vimrc is reloaded.
+" set statusline=
+" 
+" " Status line left side.
+" set statusline+=\ %F\ %M\ %Y\ %R
+" 
+" " Use a divider to separate the left side from the right side.
+" set statusline+=%=
+" 
+" " Status line right side.
+" set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
+" 
+" " Show the status on the second to last line.
+" set laststatus=2
+" " /// END MANUAL CONFIG SETTINGS 
+
+
 
 " }}}
 
