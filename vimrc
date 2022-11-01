@@ -100,6 +100,23 @@ colorscheme srcery
 " ==== VIM-EASYCOMPLETE PLUGIN ===
 " install pack from https://github.com/jayli/vim-easycomplete
 
+" ==== MKDX MARKDOWN PLUGIN ====
+" install from https://github.com/SidOfc/mkdx
+if !has('nvim')
+  augroup MKDX
+    au!
+    au FileType markdown so $HOME/.vim/pack/plugins/start/mkdx/ftplugin/markdown.vim
+  augroup END
+endif
+
+" *** MKDX CONFIG *** see github link above for more
+" this is the recommended quick setup recommendation
+let g:mkdx#settings     = { 'highlight': { 'enable': 1 },
+                        \ 'enter': { 'shift': 1 },
+                        \ 'links': { 'external': { 'enable': 1 } },
+                        \ 'toc': { 'text': 'Table of Contents', 'update_on_write': 1 },
+                        \ 'fold': { 'enable': 1 } }
+                                       
 
 " }}}
 
