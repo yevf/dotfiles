@@ -26,7 +26,7 @@ require 'paq' {
 --  {'lervag/vimtex'};
   {'lukas-reineke/indent-blankline.nvim'};
 --  {'navarasu/onedark.nvim'};
-  {'shaunsingh/solarized.nvim'};
+  {'ellisonleao/gruvbox.nvim'};
   -- {'neovim/nvim-lspconfig'};
   {'nvim-treesitter/nvim-treesitter'};
   {'nvim-treesitter/nvim-treesitter-context'};
@@ -92,15 +92,16 @@ require('treesitter-context').setup {mode = 'topline'}
 -- }
 -- require('onedark').load()
 
--- solarized theme
-require('solarized').set()
+-- gruvbox.nvim theme
+require('gruvbox').setup()
+vim.cmd("colorscheme gruvbox")
 
 -- -- vimtex
 -- vim.g['vimtex_quickfix_mode'] = false
 -- -- lualine.nvim
   require('lualine').setup {
     options = {
-      theme = 'solarized'
+      theme = 'gruvbox'
     }
   }
 
