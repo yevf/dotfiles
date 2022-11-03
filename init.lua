@@ -26,6 +26,7 @@ require 'paq' {
 --  {'lervag/vimtex'};
   {'lukas-reineke/indent-blankline.nvim'};
 --  {'navarasu/onedark.nvim'};
+  {'shaunsingh/solarized.nvim'};
   -- {'neovim/nvim-lspconfig'};
   {'nvim-treesitter/nvim-treesitter'};
   {'nvim-treesitter/nvim-treesitter-context'};
@@ -90,11 +91,17 @@ require('treesitter-context').setup {mode = 'topline'}
 --   highlights = {TreesitterContext = {bg = colors.bg1, fmt = 'italic'}},
 -- }
 -- require('onedark').load()
+
+-- solarized theme
+require('solarized').set()
+
 -- -- vimtex
 -- vim.g['vimtex_quickfix_mode'] = false
 -- -- lualine.nvim
   require('lualine').setup {
-    options = { theme = 'onedark' }
+    options = {
+      theme = 'solarized'
+    }
   }
 
 -------------------- OPTIONS -------------------------------
